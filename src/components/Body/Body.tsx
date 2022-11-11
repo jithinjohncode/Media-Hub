@@ -1,19 +1,37 @@
-import HeadSection from '../HeadSection'
-import s from './Body.module.css'
-import img from '../../images/commingsoon.png'
+import HeadSection from "../HeadSection";
+import s from "./Body.module.css";
+import Pages from "../Pages/Createpage";
+import { useState } from "react";
+import TabBar from "../Common/TabBar";
+import Uploads from "../../pages/Uploads";
+import CommingSoon from "../../pages/commingsoon";
+
+type TabAndBody = {
+  tabName: String;
+  body: JSX.Element;
+};
 
 const Body = ({ children }: any) => {
-    return (
-        <div className={s.rootContainer}>
-            {/* <HeadSection></HeadSection> */}
-            {/* <hr></hr> */}
-            {/* <div className='bg-red-500 w-1/2 h-1/2 overflow-hidden'> */}
-                {/* <p>This is body</p> */}
-                <img src={img}  className='h-full aspect-video m-auto overflow-hidden object-cover' />
+  const tabAndBody: TabAndBody[] = [
+    { tabName: "Edit", body: <Pages /> },
+    { tabName: "Uploads", body: <Uploads /> },
+    { tabName: "View", body: <CommingSoon /> },
+    { tabName: "Comming_soon", body: <CommingSoon /> },
+  ];
 
-            {/* </div> */}
-        </div>
-    )
-}
+  const tabs = tabAndBody.map((t) => t.tabName);
+  const bodies = tabAndBody.map((t) => t.body);
 
-export default Body
+  const [selectedTab, setSelectedTab] = useState(0);
+  return (
+    <div className={s.rootContainer}>
+      <HeadSection>
+        <TabBar tabs={tabs} onSelectTab={(i) => setSelectedTab(i)} />
+      </HeadSection>
+      <hr></hr>
+      {bodies.at(selectedTab)}
+    </div>
+  );
+};
+
+export default Body;

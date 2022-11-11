@@ -1,17 +1,10 @@
 import Body from "./components/Body";
-import Card from "./components/Card";
+import Card from "./components/Common/Card";
 import Layout from "./components/Layout";
 import Navbar from "./components/Navbar";
-import Uploads from "./components/Uploads/Uploads";
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Apps from "./components/Apps/Apps";
-import Home from "./components/Home/Home";
-
 
 function App() {
   return (
@@ -22,12 +15,12 @@ function App() {
             <Navbar />
             <div className="w-96 bg-[#F2EBE1]">
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/upload" element={<Uploads />} />
+                <Route path="/" element={<Apps />} />
+                {/* <Route path="/upload" element={<Uploads />} />
                 <Route path="/apps" element={<Apps />} />
                 <Route path="/theme" element={<Home />} />
                 <Route path="/settings" element={<Home />} />
-                <Route path="/users" element={<Home />} />
+                <Route path="/users" element={<Home />} /> */}
               </Routes>
             </div>
             <Body />
@@ -37,7 +30,5 @@ function App() {
     </div>
   );
 }
-
-
 
 export default App;

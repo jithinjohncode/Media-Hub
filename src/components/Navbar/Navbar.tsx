@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import HeadSection from '../HeadSection'
 import s from './Navbar.module.css'
 
@@ -10,7 +10,7 @@ const Navbar = ({ children }: any) => {
                 <div className={s.logo}>LOGO</div>
             </HeadSection>
             <div className={s.navbody}>
-                <Link to='/'>
+                {/* <Link to='/'>
                   <NavItem name="Home" iconUrl="./Icons/navbar/home.svg" />
                 </Link>
                 <Link to='/upload'>
@@ -27,7 +27,7 @@ const Navbar = ({ children }: any) => {
                 </Link>
                 <Link to='/users'>
                     <NavItem name="Users" iconUrl="./Icons/navbar/user.svg" />
-                </Link>
+                </Link> */}
             </div>
         </div>
         </div>
@@ -36,11 +36,11 @@ const Navbar = ({ children }: any) => {
 
 export default Navbar
 
-const NavItem = ({ name, iconUrl }: any) => {
-    return (
-        <div className={s.navItem}>
-            <img src={iconUrl} alt={name} />
-            <div>{name}</div>
-        </div>
-    )
-}
+// const NavItem = ({ name, iconUrl }: any) => {
+//     return (
+//         <div className={s.navItem}>
+//             <img src={iconUrl} alt={name} />
+//             <div>{name}</div>
+//         </div>
+//     )
+// }
