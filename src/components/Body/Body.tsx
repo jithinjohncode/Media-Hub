@@ -5,6 +5,7 @@ import { useState } from "react";
 import TabBar from "../Common/TabBar";
 import Uploads from "../../pages/Uploads";
 import CommingSoon from "../../pages/commingsoon";
+import ComponentOne from "../ComponentOne"
 
 type TabAndBody = {
   tabName: String;
@@ -16,7 +17,7 @@ const Body = ({ children }: any) => {
     { tabName: "Edit", body: <Pages /> },
     { tabName: "Uploads", body: <Uploads /> },
     { tabName: "View", body: <CommingSoon /> },
-    { tabName: "Comming_soon", body: <CommingSoon /> },
+    { tabName: "Comming_soon", body: <ComponentOne /> },
   ];
 
   const tabs = tabAndBody.map((t) => t.tabName);

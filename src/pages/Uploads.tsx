@@ -125,7 +125,7 @@ const ImageTile = ({
 }) => {
   return (
     <div>
-      <img src={imageSrc} alt={title} />
+      <img src={imageSrc} alt={title} onLoad={() => console.log("imageloaded")}/>
       <p className=" text-sm">sample description of image</p>
     </div>
   );
